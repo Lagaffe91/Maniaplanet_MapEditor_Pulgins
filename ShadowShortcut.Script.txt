@@ -1,5 +1,5 @@
 /****************************************************
-*      Auto Number CP Editor Plugin      			     *
+*      Shortcut Shadow Plugin     			     *
 *      Author github: https://github.com/Lagaffe91  *
 *****************************************************/
 
