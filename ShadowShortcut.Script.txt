@@ -1,0 +1,25 @@
+/****************************************************
+*      Auto Number CP Editor Plugin      			     *
+*      Author github: https://github.com/Lagaffe91  *
+*****************************************************/
+
+#RequireContext CMapEditorPlugin
+
+	
+
+#Const	ScriptName	"ShadowShortcut.Script.txt"
+#Const	Version			"0.1"
+
+main() {
+	while (True) {
+		yield;
+		
+		foreach (Event in PendingEvents) {
+			if (Event.Type == CMapEditorPluginEvent::Type::KeyPress) {
+					if(Event.KeyName == "A" || Event.KeyName == "Q"){ 
+						ComputeShadows(CMapEditorPlugin::ShadowsQuality::Fast);
+					}
+				}
+			}
+		}
+	}
