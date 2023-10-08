@@ -1,0 +1,27 @@
+/****************************************************
+*      Map Auto Save  Plugin     			             *
+*      Author github: https://github.com/Lagaffe91  *
+*****************************************************/
+
+#RequireContext CMapEditorPlugin
+
+#Include "TimeLib" as TimeLib
+
+#Const	ScriptName	"MapAutoSave.Script..txt"
+#Const	Version			"0.1"
+
+main() {
+
+	//Time between two saves
+	declare Integer SaveDelay = 500;
+	declare Text LastSaveTimeStamp = TimeLib::GetCurrent();
+
+	while (True) {
+		yield; 
+
+		if(TimeLib::GetDelta(TimeLib::GetCurrent(), LastSaveTimeStamp) > SaveDelay){
+			LastSaveTimeStamp = TimeLib::GetCurrent();
+			SaveMap(MapFileName);
+		}
+	}
+}
